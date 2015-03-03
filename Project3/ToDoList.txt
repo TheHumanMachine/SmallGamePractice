@@ -1,0 +1,8 @@
+***** To Do List *****
+-Player inventory management (Adding/Removing/Etc)
+-Enemy loot system
+-Shop inventory management (Items/stocks/prices)
+-Enviroments (Different regions, cities, dungeons, forests, etc.)
+-Different Enemy types(Species/Weaknesses/Strength/Magic)
+-Loot types(light armor, heavy armor, swords, etc.)
+-

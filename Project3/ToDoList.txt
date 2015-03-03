@@ -6,3 +6,34 @@
 -Different Enemy types(Species/Weaknesses/Strength/Magic)
 -Loot types(light armor, heavy armor, swords, etc.)
 -
+
+
+
+
+*** Player ***
+attack
+buy things
+defend / block
+explore(cities, jungles, temples, etc)
+have items specific to class (Mages get cloth/light armor, Archers get medium/leather armor, etc.)
+
+
+*** Enemies/Monsters ***
+Attack
+Defend
+Drop relevant loot
+Enviroment specific 
+Armor/ Gear
+
+
+*** Shops ***
+Inventory
+Gold
+specialization 
+"Wealth" levels
+
+
+*** Enviroments ***
+Type (ie. City, Temple, Forest, etc.)
+Reward(Gold, armor, spells, potions, etc.)
+Enemy type (Spiders, humans, trolls, giants, etc)

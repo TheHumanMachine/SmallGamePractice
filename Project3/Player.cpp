@@ -1,6 +1,8 @@
 #include "Player.h"
 #include <iostream>
 #include <string>
+#include <random>
+#include <ctime>
 
 using namespace std;
 
@@ -10,6 +12,27 @@ Player::Player(std::string name)
 	_name = name;
 	_experience = 0;
 	_money = 0; 
+	_pLevel = 0;
+}
+
+int Player::attack()
+{
+	static std::default_random_engine randomEngine(time(NULL));
+	std::uniform_int_distribution<int> attackRoll(0, _attack);
+
+	return attackRoll(randomEngine);
+}
+
+void Player::levelUp()
+{
+	while (_experience >= 50){
+		_pLevel += 1;
+		_health += 10;
+		_attack += 5;
+		_defense += 5;
+		_experience -= 50;
+	}
+
 }
 
 std::string Player::pickClassType()
@@ -34,7 +57,7 @@ std::string Player::pickClassType()
 		for (it = _classChoice.begin(); it != _classChoice.end(); it++){
 
 			if (pickedClass == *it){
-				return pickedClass;
+				setPlayerClassType(pickedClass);
 			}
 		}
 		cout << "Sorry that was an invalid input\n\n" << endl;

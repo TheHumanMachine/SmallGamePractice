@@ -9,6 +9,8 @@ class Player
 public:
 	Player(std::string name);
 
+	int attack();
+	void levelUp();
 
 	//Getters
 	std::string getName(){ return _name; }
@@ -37,12 +39,12 @@ private:
 	int _health;
 	int _attack;
 	int _defense;
-	std::string _class = "NONE";
 	int _experience;
 	int _money;
+	int _pLevel;
+	std::string _armorType;
+	std::string _class = "NONE";
 	std::list<std::string> _classChoice;
-
-	
 
 };
 

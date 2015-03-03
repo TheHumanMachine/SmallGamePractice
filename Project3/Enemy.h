@@ -1,17 +1,18 @@
 #pragma once
 #include <string>
+#include <random>
 
 class Enemy
 {
 public:
-	Enemy(std::string name, int health, int attack, int defense, int experience, int money);
+	Enemy(std::string enemyType, int level);
+	int attack();
 
-
-
-
-
+	//Setters
+	void setStats();
 
 	//Getters
+	int getStats();
 	std::string getName(){ return _name; }
 	int getHealth(){ return _health; }
 	int getAttack(){ return _attack; }
@@ -22,6 +23,8 @@ public:
 private:
 
 	std::string _name;
+	std::string _enemyType;
+	int _enemyLevel;
 	int _health;
 	int _attack;
 	int _defense;

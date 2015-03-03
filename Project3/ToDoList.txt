@@ -1,40 +1,43 @@
-***** To Do List *****
--Player inventory management (Adding/Removing/Etc)
--Enemy loot system
--Shop inventory management (Items/stocks/prices)
--Enviroments (Different regions, cities, dungeons, forests, etc.)
--Different Enemy types(Species/Weaknesses/Strength/Magic)
--Loot types(light armor, heavy armor, swords, etc.)
--
+______To Do List ______
 
-
-
-
-*** Player ***
-[X]attack
-buy things
-defend / block
-explore(cities, jungles, temples, etc)
-have items specific to class (Mages get cloth/light armor, Archers get medium/leather armor, etc.)
-
-
-*** Enemies/Monsters ***
-[X]Attack
+***__Player__***
+Buy Items
+Sell Items
 Defend
+Loot enemies, etc.
+Explore different enviroments(cities, jungles, temples, etc)
+Items specific to class type.
+[X]attack
+
+
+***__Enemies/Monsters__***
+Defend
+Take Damage
 Drop relevant loot
-Enviroment specific 
+Enviroment specific
 Armor/ Gear
+[X]Attack
 
 
-*** Shops ***
+***__Shops__***
 Inventory
+Buying Items
+Selling Items
+Add more specializations
 [X]Gold
 [X]specialization 
-Add more specializations
 [X]"Wealth" levels
 
 
-*** Enviroments ***
+***__Items__***
+Item type (Armor, Weapon, Potion, etc.)
+Attribute(s)(Health, Attack, Healing, Posion, etc)
+Damage - if applicable
+Armor rating - if applicable
+Effects - if applicable
+
+
+***__Enviroments__***
 Type (ie. City, Temple, Forest, etc.)
-Reward(Gold, armor, spells, potions, etc.)
-Enemy type (Spiders, humans, trolls, giants, etc)
+Rewards(Gold, armor, spells, potions, etc.)
+Enemy types (Spiders, humans, trolls, giants, etc)

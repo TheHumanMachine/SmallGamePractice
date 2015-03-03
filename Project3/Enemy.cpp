@@ -13,10 +13,21 @@ Enemy::Enemy(std::string enemyType, int level)
 
 int Enemy::attack()
 {
-	static std::default_random_engine randomEngine(time(NULL));
+	static std::default_random_engine randomEngine((unsigned int)time(NULL));
 	std::uniform_int_distribution<int> attackRoll(0, _attack);
 
 	return attackRoll(randomEngine);
+}
+
+void Enemy::takeDamage(int damage)
+{
+	damage -= _defense;
+	if (damage > 0){
+
+		_health -= damage;
+
+	}
+
 }
 
 void Enemy::setStats()
@@ -32,7 +43,7 @@ void Enemy::setStats()
 
 int Enemy::getStats()
 {
-	static std::default_random_engine randomEngine(time(NULL));
+	static std::default_random_engine randomEngine((unsigned int)time(NULL));
 	std::uniform_int_distribution<int> setAtttributes(1, _enemyLevel * 2);
 
 	return setAtttributes(randomEngine);

@@ -7,6 +7,7 @@ class Enemy
 public:
 	Enemy(std::string enemyType, int level);
 	int attack();
+	void takeDamage(int damage);
 
 	//Setters
 	void setStats();

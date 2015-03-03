@@ -10,6 +10,7 @@ public:
 	Player(std::string name);
 
 	int attack();
+	void takeDamage(int damage);
 	void levelUp();
 
 	//Getters
@@ -20,6 +21,7 @@ public:
 	int getExperience(){ return _experience; }
 	int getMoney(){ return _money; }
 	std::string getClass() { return _class; }
+	std::string getArmorType() { return _armorType; }
 
 	//Setters
 	void addHealthPoints(int health){ _health += health; }
@@ -27,14 +29,14 @@ public:
 	void addDefenseRating(int defense){ _defense += defense; }
 	void addExpPoints(int experience){ _experience += experience; }
 	void addMoney(int money){ _money += money; }
-	std::string pickClassType();
+	void pickClassType();
 	void setPlayerClassType(std::string classType);
 	void setClassChoices();
-	void setClassAttrbs(); 
-
+	void setClassAttributes();
 
 
 private:
+	//Standard Attributes
 	std::string _name;
 	int _health;
 	int _attack;
@@ -42,9 +44,14 @@ private:
 	int _experience;
 	int _money;
 	int _pLevel;
+
+	//Class Specific 
 	std::string _armorType;
 	std::string _class = "NONE";
-	std::list<std::string> _classChoice;
+	std::list<std::string> _classChoices;
+
+	//Msic
+	std::list<std::string> _playerInventory;
 
 };
 

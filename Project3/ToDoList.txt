@@ -11,7 +11,7 @@
 
 
 *** Player ***
-attack
+[X]attack
 buy things
 defend / block
 explore(cities, jungles, temples, etc)
@@ -19,7 +19,7 @@ have items specific to class (Mages get cloth/light armor, Archers get medium/le
 
 
 *** Enemies/Monsters ***
-Attack
+[X]Attack
 Defend
 Drop relevant loot
 Enviroment specific 

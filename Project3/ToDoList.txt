@@ -28,9 +28,10 @@ Armor/ Gear
 
 *** Shops ***
 Inventory
-Gold
-specialization 
-"Wealth" levels
+[X]Gold
+[X]specialization 
+Add more specializations
+[X]"Wealth" levels
 
 
 *** Enviroments ***

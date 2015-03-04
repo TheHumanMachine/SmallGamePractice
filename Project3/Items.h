@@ -5,9 +5,25 @@
 class Items
 {
 public:
-	Items(std::string purpose);
+	Items();
+	void itemInit();
 	void itemPurpose();
+
+
+	//Getters
+	int getDamageBonus(){ return _plusDamage; }
+	int getHealthBonus(){ return _plusHealth; }
+	int getDefenseBonus(){ return _plusDefense; }
+	int getAttackBonus(){ return _plusAttack; }
+	std::string getName(){ return _itemName; }
+	std::string getType(){ return _itemType; }
+	std::string getCategory(){ return _itemCategory; }
+
+	//Setters
+	void setCategory();
+	void setAttributes();
 	void setItemType();
+	void setItemName();
 
 private:
 	//Should be set after attributes are set for names like " of healing",
@@ -21,16 +37,16 @@ private:
 
 
 	//For Armor and Weapons
-	int plusDamage; //Weapons
-	int plusHealth; //Both
-	int plusDefense;//Armor
-	int plusAttack; //Both
+	int _plusDamage; //Weapons
+	int _plusHealth; //Both
+	int _plusDefense;//Armor
+	int _plusAttack; //Both
 
 
 	//For potions
-	int healthRestored;
-	int manaRestored;
-	int addDamage;
+	int _healthRestored;
+	int _manaRestored;
+	int _addDamage;
 
 	std::string _itemPurpose;
 	

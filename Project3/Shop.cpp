@@ -44,7 +44,7 @@ void Shop::setShopMoney()
 	}
 
 
-	static std::default_random_engine randomEngine(time(NULL));
+	static std::default_random_engine randomEngine((unsigned int)time(NULL));
 	std::uniform_int_distribution<int> setMoney(shopLow, shopHigh);
 
 	_money = setMoney(randomEngine);
@@ -74,7 +74,7 @@ void Shop::setShopSize()
 		inventoryHigh = 15;
 	}
 
-	static std::default_random_engine randomEngine(time(NULL));
+	static std::default_random_engine randomEngine((unsigned int)time(NULL));
 	std::uniform_int_distribution<int> setInventorySize(inventoryLow, inventoryHigh);
 
 	_shopSize = setInventorySize(randomEngine);
@@ -82,7 +82,7 @@ void Shop::setShopSize()
 
 void Shop::setShopSpecialty()
 {
-	static std::default_random_engine randomEngine(time(NULL));
+	static std::default_random_engine randomEngine((unsigned int)time(NULL));
 	std::uniform_int_distribution<int> chooseSpecialty(0, 12);
 	int pickSpecialty = chooseSpecialty(randomEngine);
 

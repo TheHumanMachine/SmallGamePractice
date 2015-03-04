@@ -14,11 +14,14 @@ GameSystem::~GameSystem()
 
 void GameSystem::playGame()
 {
-	Shop shop1("Daisy's Wears", "HIGH");
-	cout << "Money :" << shop1.getMoney() << endl;
-	cout << "Wealth is " << shop1.getWealth() << endl;
-	cout << "The size of the shop is " << shop1.getShopSize() << endl;
-	cout << "This shop specializes in " << shop1.getSpecialty() << endl;
-
+	Items item1;
+	Items item2;
+	cout << item1.getType() << endl;
+	cout << item1.getCategory() << endl;
+	cout << item1.getName() << endl;
+	cout << "\n" << endl;
+	cout << item2.getType() << endl;
+	cout << item2.getCategory() << endl;
+	cout << item2.getName() << endl;
 
 }

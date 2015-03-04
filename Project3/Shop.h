@@ -32,10 +32,7 @@ private:
 	int _shopSize;
 	std::string _shopSpecialty;
 
-
-
-
-	std::list<std::string> _shopInventory[];
+	std::list<std::string> _shopInventory[20];
 
 };
 

@@ -13,6 +13,10 @@ public:
 	void takeDamage(int damage);
 	void levelUp();
 
+	void buyItem();
+
+
+
 	//Getters
 	std::string getName(){ return _name; }
 	int getHealth(){ return _health; }

@@ -157,3 +157,5 @@ void Shop::setShopSpecialty()
 		}
 	}
 }
+
+

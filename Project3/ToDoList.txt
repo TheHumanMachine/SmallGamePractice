@@ -1,6 +1,7 @@
 ______To Do List ______
 
 ***__Player__***
+Add mana for casters
 Buy Items
 Sell Items
 Defend

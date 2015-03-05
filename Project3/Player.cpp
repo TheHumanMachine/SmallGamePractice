@@ -18,19 +18,33 @@ Player::Player(std::string name)
 	setClassAttributes();
 }
 
+
+int Player::randomRoll(int num1, int num2)
+{
+	static std::default_random_engine randomEngine((unsigned int)time(NULL));
+	std::uniform_int_distribution<int> roll(num1, num2);
+
+	return roll(randomEngine);
+}
+
+
 int Player::attack()
 {
-	static std::default_random_engine randomEngine(time(NULL));
-	std::uniform_int_distribution<int> attackRoll(0, _attack);
-
-	return attackRoll(randomEngine);
+	return randomRoll(0, _attack);
 }
 
 void Player::takeDamage(int damage)
 {
-	damage -= _defense;
-	if (damage > 0){
-		_health -= damage;
+	if (randomRoll(1, 5) != 2){
+		damage -= _defense;
+		if (damage > 0){
+
+			_health -= damage;
+		}
+	}
+	else{
+		std::cout << "Your attack has been blocked" << std::endl;
+		return;
 	}
 
 }

@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include <iostream>
 #include <random>
 #include <ctime>
 
@@ -11,24 +12,36 @@ Enemy::Enemy(std::string enemyType, int level)
 
 }
 
-int Enemy::attack()
+int Enemy::randomRoll(int num1, int num2)
 {
 	static std::default_random_engine randomEngine((unsigned int)time(NULL));
-	std::uniform_int_distribution<int> attackRoll(0, _attack);
+	std::uniform_int_distribution<int> roll(num1, num2);
 
-	return attackRoll(randomEngine);
+	return roll(randomEngine);
 }
+
+int Enemy::attack()
+{
+	return randomRoll(0, _attack);
+}
+
 
 void Enemy::takeDamage(int damage)
 {
-	damage -= _defense;
-	if (damage > 0){
+	if (randomRoll(1, 5) != 2){
+		damage -= _defense;
+		if (damage > 0){
 
-		_health -= damage;
-
+			_health -= damage;
+		}
+	}
+	else{
+		std::cout << "Your attack has been blocked" << std::endl;
+		return;
 	}
 
 }
+
 
 void Enemy::setStats()
 {
@@ -43,9 +56,6 @@ void Enemy::setStats()
 
 int Enemy::getStats()
 {
-	static std::default_random_engine randomEngine((unsigned int)time(NULL));
-	std::uniform_int_distribution<int> setAtttributes(1, _enemyLevel * 2);
-
-	return setAtttributes(randomEngine);
+	return randomRoll(1, _enemyLevel *2);
 }
 

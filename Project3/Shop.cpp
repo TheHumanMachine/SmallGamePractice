@@ -3,6 +3,7 @@
 #include <random>
 #include <ctime>
 
+
 using namespace std;
 
 Shop::Shop(std::string name, std::string wealth)
@@ -12,22 +13,32 @@ Shop::Shop(std::string name, std::string wealth)
 	setShopMoney();
 	setShopSize();
 	setShopSpecialty();
+	setInventory();
 
+}
+
+
+int randomRoll(int num1, int num2)
+{
+	srand((unsigned int)time(NULL));
+	int x = rand() % num1 + num2;
+	/*std::default_random_engine randomEngine((unsigned int)time(NULL));
+	std::uniform_int_distribution<int> roll(num1, num2);*/
+
+	return x;
 }
 
 
 void Shop::showShopList()
 {
-	std::list<std::string>::iterator it;
-
-	for (it = _shopInventory->begin(); it != _shopInventory->end(); it++){
-		cout << *it << endl; 
-
+	for (int i = 0; i < _shopSize; i++){
+		std::cout << i + 1 << ". "<< _shopInventory[i]->getName() << std::endl;
 	}
 }
 
 void Shop::setShopMoney()
 {
+
 	int shopLow, shopHigh;
 
 	if (_wealth == "HIGH"){
@@ -42,12 +53,12 @@ void Shop::setShopMoney()
 		shopLow = 100;
 		shopHigh = 1000;
 	}
+	srand(time(NULL));
+	int x = rand() % shopHigh + shopLow;
 
-
-	static std::default_random_engine randomEngine((unsigned int)time(NULL));
-	std::uniform_int_distribution<int> setMoney(shopLow, shopHigh);
-
-	_money = setMoney(randomEngine);
+	//_money = randomRoll(shopLow, shopHigh);
+	_money = x;
+	return;
 }
 
 void Shop::setShopSize()
@@ -74,17 +85,20 @@ void Shop::setShopSize()
 		inventoryHigh = 15;
 	}
 
-	static std::default_random_engine randomEngine((unsigned int)time(NULL));
-	std::uniform_int_distribution<int> setInventorySize(inventoryLow, inventoryHigh);
-
-	_shopSize = setInventorySize(randomEngine);
+	
+	srand(time(NULL));
+	int x = rand() % inventoryHigh + inventoryLow;
+	//_shopSize = randomRoll(inventoryLow, inventoryHigh);
+	_shopSize = x;
 }
+
 
 void Shop::setShopSpecialty()
 {
-	static std::default_random_engine randomEngine((unsigned int)time(NULL));
-	std::uniform_int_distribution<int> chooseSpecialty(0, 12);
-	int pickSpecialty = chooseSpecialty(randomEngine);
+	srand(time(NULL));
+	int x = rand() % 10 + 1;
+	//int pickSpecialty = randomRoll(0, 12);
+	int pickSpecialty = x;
 
 
 	/*If statement is left in so in the future, if chances are changed between different
@@ -159,3 +173,16 @@ void Shop::setShopSpecialty()
 }
 
 
+void Shop::setInventory()
+{
+	/*std::list<std::string>::iterator it;
+	for (it = _shopInventory->begin(); it != _shopInventory->end(); it++){
+		_shopInventory.push_back()
+	}*/
+
+	for (int i = 0; i < _shopSize; i++){
+		_shopInventory.push_back(new Items);
+	}
+
+
+}

@@ -1,6 +1,8 @@
 #pragma once
 #include <list>
 #include <string>
+#include <vector>
+#include "Items.h"
 
 
 class Shop
@@ -8,6 +10,7 @@ class Shop
 
 public:
 	Shop(std::string name, std::string wealth);
+	int randomRoll(int num1, int num2);
 
 	//Getters
 	std::string getName(){ return _name; }
@@ -23,6 +26,7 @@ public:
 	void setShopMoney();
 	void setShopSize();
 	void setShopSpecialty();
+	void setInventory();
 
 private:
 
@@ -31,8 +35,8 @@ private:
 	std::string _wealth;
 	int _shopSize;
 	std::string _shopSpecialty;
+	std::vector<Items*> _shopInventory;
 
-	std::list<std::string> _shopInventory[20];
 
 };
 

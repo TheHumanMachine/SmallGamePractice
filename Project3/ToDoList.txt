@@ -1,27 +1,29 @@
 ______To Do List ______
 
 ***__Player__***
+Attack types (i.e. Physical, Magic, Posion, etc.)
+Class specific attacks
 Add mana for casters
 Buy Items
 Sell Items
-Defend
 Loot enemies, etc.
 Explore different enviroments(cities, jungles, temples, etc)
 Items specific to class type.
+[X]Defend //Included with takeDamage()
 [X]attack
 
 
 ***__Enemies/Monsters__***
-Defend
-Take Damage
 Drop relevant loot
 Enviroment specific
 Armor/ Gear
+[X]Defend //Included with takeDamage()
+[X]Take Damage
 [X]Attack
 
 
 ***__Shops__***
-Inventory
+Items in inventory
 Buying Items
 Selling Items
 Add more specializations
@@ -31,11 +33,11 @@ Add more specializations
 
 
 ***__Items__***
-Item type (Armor, Weapon, Potion, etc.)
-Attribute(s)(Health, Attack, Healing, Posion, etc)
-Damage - if applicable
-Armor rating - if applicable
-Effects - if applicable
+Armor rating - if applicable 
+Effects - if applicable 
+[X]Damage - if applicable
+[X]Attribute(s)(Health, Attack, Healing, Posion, etc)
+[X]Item type (Armor, Weapon, Potion, etc.)
 
 
 ***__Enviroments__***

@@ -19,14 +19,14 @@ void Items::itemInit()
 
 void Items::itemPurpose()
 {
-	//Forgot the purpose of this function.
+	//Forgot the purpose (Ironic yes) of this function.
 }
 
 
 void Items::setCategory()
 {
 	static std::default_random_engine randomEngine(time(NULL));
-	std::uniform_int_distribution<int> setCate(0, 8);
+	std::uniform_int_distribution<int> setCate(1, 8);
 
 	if (_itemType == "Weapon"){
 		switch (setCate(randomEngine)){

@@ -8,7 +8,7 @@ class Player
 {
 public:
 	Player(std::string name);
-
+	int randomRoll(int num1, int num2);
 	int attack();
 	void takeDamage(int damage);
 	void levelUp();

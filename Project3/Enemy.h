@@ -1,13 +1,18 @@
 #pragma once
 #include <string>
 #include <random>
+#include <iostream>
+
 
 class Enemy
 {
 public:
 	Enemy(std::string enemyType, int level);
+	int randomRoll(int num1, int num2);
 	int attack();
 	void takeDamage(int damage);
+	
+
 
 	//Setters
 	void setStats();

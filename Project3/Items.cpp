@@ -15,6 +15,7 @@ void Items::itemInit()
 	setAttributes();
 	setCategory();
 	setItemName();
+	setBuyAndSellPrice();
 }
 
 void Items::itemPurpose()
@@ -93,7 +94,6 @@ void Items::setAttributes()
 	static std::default_random_engine randomEngine(time(NULL));
 	std::uniform_int_distribution<int> setAttri(0, 15);
 
-
 	if (_itemType == "Weapon"){
 		int _plusDamage = setAttri(randomEngine); 
 		int _plusHealth = setAttri(randomEngine);
@@ -119,8 +119,11 @@ void Items::setAttributes()
 
 void Items::setItemType()
 {
-
 	//Sets this item to a weapon, armor or potion
+
+	/*srand((unsigned int)time(NULL));
+	int itemTypeRoll = rand() % 3 + 1;*/
+
 	static std::default_random_engine randomEngine(time(NULL));
 	std::uniform_int_distribution<int> itemTypeRoll(1, 3);
 
@@ -142,6 +145,20 @@ void Items::setItemType()
 
 void Items::setItemName()
 {
+	if (_itemType == "Potion"){
+		_itemName = _itemCategory + " of " + "Healing";
+		return;
+	}
 	//Finish Name generation 
-	_itemName = _itemCategory + " of ";
+	_itemName = _itemCategory + " of " + "the hawk";
+}
+
+
+void Items::setBuyAndSellPrice()
+{
+	static std::default_random_engine randomEngine(time(NULL));
+	std::uniform_int_distribution<int> price(1, 25);
+
+	_buyPrice = price(randomEngine);
+	_sellPrice = _buyPrice * 2;
 }

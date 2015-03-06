@@ -21,9 +21,7 @@ Shop::Shop(std::string name, std::string wealth)
 int randomRoll(int num1, int num2)
 {
 	srand((unsigned int)time(NULL));
-	int x = rand() % num1 + num2;
-	/*std::default_random_engine randomEngine((unsigned int)time(NULL));
-	std::uniform_int_distribution<int> roll(num1, num2);*/
+	int x = rand() % num2 + num1;
 
 	return x;
 }
@@ -32,7 +30,8 @@ int randomRoll(int num1, int num2)
 void Shop::showShopList()
 {
 	for (int i = 0; i < _shopSize; i++){
-		std::cout << i + 1 << ". "<< _shopInventory[i]->getName() << std::endl;
+		std::cout << i + 1 << ". " << _shopInventory[i]->getName() << ", "
+			<< _shopInventory[i]->getSellPrice() << " gold" << std::endl;
 	}
 }
 
@@ -53,10 +52,9 @@ void Shop::setShopMoney()
 		shopLow = 100;
 		shopHigh = 1000;
 	}
-	srand(time(NULL));
+	srand((unsigned int)time(NULL));
 	int x = rand() % shopHigh + shopLow;
 
-	//_money = randomRoll(shopLow, shopHigh);
 	_money = x;
 	return;
 }
@@ -95,9 +93,8 @@ void Shop::setShopSize()
 
 void Shop::setShopSpecialty()
 {
-	srand(time(NULL));
+	srand((unsigned int)time(NULL));
 	int x = rand() % 10 + 1;
-	//int pickSpecialty = randomRoll(0, 12);
 	int pickSpecialty = x;
 
 

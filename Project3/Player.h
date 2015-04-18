@@ -37,7 +37,7 @@ public:
 	void setPlayerClassType(std::string classType);
 	void setClassChoices();
 	void setClassAttributes();
-
+	void setWeaponSlots();
 
 private:
 	//Standard Attributes
@@ -53,8 +53,9 @@ private:
 	std::string _armorType;
 	std::string _class = "NONE";
 	std::list<std::string> _classChoices;
+	std::string _weaponTypes;
 
-	//Msic
+	//Misc 
 	std::list<std::string> _playerInventory;
 
 };

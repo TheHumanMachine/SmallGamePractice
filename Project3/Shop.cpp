@@ -30,8 +30,15 @@ int randomRoll(int num1, int num2)
 void Shop::showShopList()
 {
 	for (int i = 0; i < _shopSize; i++){
-		std::cout << i + 1 << ". " << _shopInventory[i]->getName() << ", "
-			<< _shopInventory[i]->getSellPrice() << " gold" << std::endl;
+
+		if (i < 9){
+			std::cout << "0" << i + 1 << ". " << _shopInventory[i]->getName() << ", "
+				<< _shopInventory[i]->getSellPrice() << " gold" << std::endl;
+		}
+		if (i > 9){
+			std::cout << i + 1 << ". " << _shopInventory[i]->getName() << ", "
+				<< _shopInventory[i]->getSellPrice() << " gold" << std::endl;
+		}
 	}
 }
 
@@ -71,23 +78,22 @@ void Shop::setShopSize()
 	int inventoryLow, inventoryHigh;
 
 	if (_wealth == "HIGH"){
-		inventoryLow = 15;
-		inventoryHigh = 35;
+		inventoryLow = 10;
+		inventoryHigh = 15;
 	}
 	if (_wealth == "MEDIUM"){
 		inventoryLow = 10;
-		inventoryHigh = 25;
+		inventoryHigh = 15;
 	}
 	if (_wealth == "LOW"){
 		inventoryLow = 5;
-		inventoryHigh = 15;
+		inventoryHigh = 10;
 	}
 
 	
-	srand(time(NULL));
-	int x = rand() % inventoryHigh + inventoryLow;
-	//_shopSize = randomRoll(inventoryLow, inventoryHigh);
-	_shopSize = x;
+	static std::default_random_engine randomEngine(time(NULL));
+	std::uniform_int_distribution<int> x(inventoryLow, inventoryHigh);
+	_shopSize = x(randomEngine);
 }
 
 
@@ -108,20 +114,19 @@ void Shop::setShopSpecialty()
 
 		switch (pickSpecialty){
 		case 8:
-			_shopSpecialty = "ARMOR";
+			_shopSpecialty = "Armor";
 			break;
-
 		case 7:
-			_shopSpecialty = "WEAPONS";
+			_shopSpecialty = "Weapon";
 			break;
 		case 6:
-			_shopSpecialty = "POTIONS";
+			_shopSpecialty = "Potion";
 			break;
-		case 5:
-			_shopSpecialty = "MAGIC";
-			break;
+		//case 5:
+			//_shopSpecialty = "MAGIC";
+			//break;
 		default:
-			_shopSpecialty = "GENERAL";
+			_shopSpecialty = "General";
 
 		}
 	}
@@ -138,9 +143,9 @@ void Shop::setShopSpecialty()
 		case 6:
 			_shopSpecialty = "POTIONS";
 			break;
-		case 5:
+		/*case 5:
 			_shopSpecialty = "MAGIC";
-			break;
+			break;*/
 		default:
 			_shopSpecialty = "GENERAL";
 
@@ -159,9 +164,9 @@ void Shop::setShopSpecialty()
 		case 6:
 			_shopSpecialty = "POTIONS";
 			break;
-		case 5:
+		/*case 5:
 			_shopSpecialty = "MAGIC";
-			break;
+			break;*/
 		default:
 			_shopSpecialty = "GENERAL";
 
@@ -178,7 +183,7 @@ void Shop::setInventory()
 	}*/
 
 	for (int i = 0; i < _shopSize; i++){
-		_shopInventory.push_back(new Items);
+		_shopInventory.push_back(new Items(_shopSpecialty));
 	}
 
 

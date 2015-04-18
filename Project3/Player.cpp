@@ -145,3 +145,9 @@ void Player::setClassAttributes()
 		_armorType = "NONESET";
 	}
 }
+
+//void Player::setWeaponTypes()
+//{
+//
+//
+//}
